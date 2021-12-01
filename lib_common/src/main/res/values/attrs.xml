@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InputLayout">
+        <attr name="android:hint" />
+        <attr name="android:inputType" />
+        <attr name="android:maxLength" />
+        <attr name="android:visibility" />
+        <attr name="mode" format="enum">
+            <enum name="account" value="0" />
+            <enum name="password" value="1" />
+        </attr>
+        <attr name="forgetTextColor" format="reference|color" />
+        <attr name="leftTips" format="string" />
+        <attr name="showLeftTips" format="boolean" />
+        <attr name="showBottomLine" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="CustomActionBar">
+        <attr name="android:text" />
+        <attr name="menuIcon" format="reference" />
+        <attr name="showBack" format="boolean" />
+    </declare-styleable>
+</resources>

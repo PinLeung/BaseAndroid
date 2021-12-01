@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion app.compileSdkVersion
+    buildToolsVersion app.buildToolsVersion
+
+
+    signingConfigs {
+        release {
+            storeFile file('../appKey.jks')
+            storePassword 'chongqing1080'
+            keyAlias 'key0'
+            keyPassword 'chongqing1080'
+        }
+
+        debug {
+            storeFile file('../appKey.jks')
+            storePassword 'chongqing1080'
+            keyAlias 'key0'
+            keyPassword 'chongqing1080'
+        }
+    }
+
+    defaultConfig {
+        applicationId app.applicationId
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled app.minifyEnabled
+            zipAlignEnabled app.zipAlignEnabled
+            shrinkResources app.shrinkResources
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable true
+        }
+        debug {
+            minifyEnabled app.minifyEnabled
+            zipAlignEnabled app.zipAlignEnabled
+            shrinkResources app.shrinkResources
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    kapt {
+        arguments {
+            arg('AROUTER_MODULE_NAME', project.name)
+        }
+    }
+    buildFeatures {
+        dataBinding = true
+        viewBinding true
+    }
+}
+
+dependencies {
+
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //基础lib
+    implementation project(':lib_common')
+}

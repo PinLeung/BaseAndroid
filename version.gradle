@@ -1,0 +1,49 @@
+ext {
+    //是否是发布(集成)模式
+    isRelease = false
+    //版本号相关
+    app = [
+            applicationId    : "com.dcq.property.user",
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.3",
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+            versionCode      : 2,
+            versionName      : "1.0.2",
+            minifyEnabled    : isRelease, //开启混淆
+            zipAlignEnabled  : isRelease, //压缩优化
+            shrinkResources  : isRelease  //移出无用资源
+    ]
+    //依赖相关
+    dependenciesID = [
+            "kotlinStdlib"    : "org.jetbrains.kotlin:kotlin-stdlib:1.5.0",
+            "coreKtx"         : "androidx.core:core-ktx:1.3.2",
+            "constraintlayout": "androidx.constraintlayout:constraintlayout:2.0.4",
+            "appcompat"       : "androidx.appcompat:appcompat:1.2.0",
+            "material"        : "com.google.android.material:material:1.2.1",
+            "fragmentKtx"     : "androidx.fragment:fragment-ktx:1.2.5",
+            "androidUtil"     : "com.blankj:utilcodex:1.30.6",
+            "pictureSelector" : "com.github.LuckSiege.PictureSelector:picture_library:v2.6.0",
+            "glide"           : "com.github.bumptech.glide:glide:4.12.0",
+            "arouter"         : "com.alibaba:arouter-api:1.5.1",
+            "rxhttp"          : "com.ljx.rxhttp:rxhttp:2.5.6",
+            "okhttp"          : "com.squareup.okhttp3:okhttp:3.12.12",
+            "mmkv"            : "com.tencent:mmkv-static:1.2.7",
+            "liveEventBus"    : "com.jeremyliao:live-event-bus-x:1.7.3",
+            "brvHelper"       : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
+            "brvKotlin"       : "com.github.liangjingkanji:BRV:1.3.19",
+            "pickerView"      : "com.contrarywind:Android-PickerView:4.1.9",
+            "xPopup"          : "com.github.li-xiaojun:XPopup:2.3.4",
+            "xUpdate"         : "com.github.xuexiangjys:XUpdate:2.0.7",
+            "banner"          : "com.youth.banner:banner:2.1.0",
+            "simpleRatingBar" : "com.github.ome450901:SimpleRatingBar:1.5.1",
+            "immersionbar"    :'com.gyf.immersionbar:immersionbar:3.0.0'
+    ]
+    //注解处理器
+    kaptID = [
+            "glide"  : "com.github.bumptech.glide:compiler:4.12.0",
+            "arouter": "com.alibaba:arouter-compiler:1.5.1",
+            "rxhttp" : "com.ljx.rxhttp:rxhttp-compiler:2.5.6"
+    ]
+
+}

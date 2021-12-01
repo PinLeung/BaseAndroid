@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="tv_hint_tips1">获取验证码</string>
+    <string name="tv_hint_tips2">忘记密码?</string>
+    <string name="tv_loading">加载中</string>
+    <string name="tv_phone_area_code">+86</string>
+</resources>

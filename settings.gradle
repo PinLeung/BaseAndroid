@@ -1,0 +1,3 @@
+rootProject.name = "BaseActivity"
+include ':app'
+include ':lib_common'
